@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package message;
+
+service MessageService {
+  rpc SendMessage (MessageRequest) returns (MessageResponse);
+}
+
+message MessageRequest {
+  string content = 1;
+  string sender = 2;
+  int32 priority = 3;
+}
+
+message MessageResponse {
+  bool success = 1;
+  string status = 2;
+  string received_at = 3;
+}
